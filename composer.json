@@ -1,0 +1,47 @@
+{
+    "name": "kahovskaia/laravel-log-viewer",
+    "description": "Lib for reading log files",
+    "license": "MIT",
+    "keywords": [
+        "log",
+        "laravel",
+        "log-reader",
+        "log-viewer",
+        "logging"
+    ],
+    "type": "laravel-package",
+    "authors": [
+        {
+            "name": "kahovskaia",
+            "email": "kahovskaia@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "4.2.*|5.*|^6.0|^7.0|^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7|^9.5.10",
+        "orchestra/testbench": "3.7.*|^7.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers"
+        ],
+        "psr-0": {
+            "Kahovskaia\\LaravelLogViewer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kahovskaia\\LaravelLogViewer\\LaravelLogViewerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
