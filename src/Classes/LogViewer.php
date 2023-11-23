@@ -1,6 +1,6 @@
 <?php
 
-namespace Kahovskaia\LaravelLogViewer;
+namespace kahovskaia\LaravelLogViewer\Classes;
 
 class LogViewer
 {
