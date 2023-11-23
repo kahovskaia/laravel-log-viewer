@@ -2,9 +2,9 @@
 
 namespace kahovskaia\LaravelLogViewer\Controllers;
 
-use Illuminate\Support\Facades\Crypt;
-use Lcobucci\JWT\Exception;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Crypt;
+use kahovskaia\LaravelLogViewer\Classes\LogViewer;
 
 class LogViewerController extends Controller
 {
@@ -117,7 +117,7 @@ class LogViewerController extends Controller
                     );
                 }
             }
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
             $lines = explode(PHP_EOL, $file);
             $logs = [];
 
