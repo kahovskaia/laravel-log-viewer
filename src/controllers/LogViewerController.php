@@ -2,7 +2,6 @@
 
 namespace Kahovskaia\LaravelLogViewer;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
 use Lcobucci\JWT\Exception;
 use Illuminate\Routing\Controller;
