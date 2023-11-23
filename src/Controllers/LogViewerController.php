@@ -139,7 +139,7 @@ class LogViewerController extends Controller
         $currentFolder = $this->getCurrentFolder();
         $breadcrumbs = $this->getBreadcrumbs();
 
-        return view('index', compact('logs', 'files', 'folders', 'currentFolder', 'breadcrumbs'));
+        return app('view')->make('laravel-log-viewer::index', compact('logs', 'files', 'folders', 'currentFolder', 'breadcrumbs'));
     }
 
     public function download()

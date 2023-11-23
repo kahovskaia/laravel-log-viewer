@@ -1,4 +1,4 @@
-<index.blade.php>
+<x-admin-layout>
     <x-slot:pre-title>{{ __('menu.administration.title') }}</x-slot:pre-title>
     <x-slot:title>{{ __('menu.administration.logs') }}</x-slot:title>
     <div class="row">
@@ -184,4 +184,4 @@
                 updateActivePage();
             });
         </script>
-</index.blade.php>
+</x-admin-layout>
