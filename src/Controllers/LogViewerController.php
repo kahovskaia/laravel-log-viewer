@@ -1,11 +1,10 @@
 <?php
 
-namespace Kahovskaia\LaravelLogViewer;
+namespace kahovskaia\LaravelLogViewer\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Crypt;
-use Lcobucci\JWT\Exception;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Crypt;
+use kahovskaia\LaravelLogViewer\Classes\LogViewer;
 
 class LogViewerController extends Controller
 {
@@ -118,7 +117,7 @@ class LogViewerController extends Controller
                     );
                 }
             }
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
             $lines = explode(PHP_EOL, $file);
             $logs = [];
 
@@ -140,7 +139,7 @@ class LogViewerController extends Controller
         $currentFolder = $this->getCurrentFolder();
         $breadcrumbs = $this->getBreadcrumbs();
 
-        return view('index', compact('logs', 'files', 'folders', 'currentFolder', 'breadcrumbs'));
+        return app('view')->make('laravel-log-viewer::index', compact('logs', 'files', 'folders', 'currentFolder', 'breadcrumbs'));
     }
 
     public function download()

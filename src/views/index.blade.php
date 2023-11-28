@@ -1,4 +1,4 @@
-<index.blade.php>
+<x-admin-layout>
     <x-slot:pre-title>{{ __('menu.administration.title') }}</x-slot:pre-title>
     <x-slot:title>{{ __('menu.administration.logs') }}</x-slot:title>
     <div class="row">
@@ -6,7 +6,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     @foreach($breadcrumbs as $key => $breadcrumb)
-                        <li class="breadcrumb-item"><a href="{{ route('admin.log.show', array_merge(request()->query(), ['folder' => $breadcrumb])) }}">{{ $key }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.logs.index', array_merge(request()->query(), ['folder' => $breadcrumb])) }}">{{ $key }}</a></li>
                     @endforeach
                 </ol>
             </nav>
@@ -18,7 +18,7 @@
                 <div class="list-group-item">
                     <div class="list-group folder">
                         @foreach($folders as $folder => $url)
-                            <a href="{{ route('admin.log.show', array_merge(request()->query(), ['folder' => $url])) }}">
+                            <a href="{{ route('admin.logs.index', array_merge(request()->query(), ['folder' => $url])) }}">
                                 <i class="ti ti-folder"></i>
                                 {{ $folder }}
                             </a>
@@ -28,7 +28,7 @@
                 <div class="list-group-item  llv-active ">
                     <div class="list-group file">
                         @foreach($files as $file => $url)
-                            <a href="{{ route('admin.log.show', array_merge(request()->query(), ['file' => $url])) }}">
+                            <a href="{{ route('admin.logs.index', array_merge(request()->query(), ['file' => $url])) }}">
                                 <i class="ti ti-file"></i>
                                 {{ $file }}
                             </a>
@@ -184,4 +184,4 @@
                 updateActivePage();
             });
         </script>
-</index.blade.php>
+</x-admin-layout>
