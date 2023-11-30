@@ -118,7 +118,7 @@ class LogViewerController extends Controller
                 }
             }
         } catch (\Exception $exception) {
-            $lines = explode(PHP_EOL, $file);
+            $lines = explode(PHP_EOL, $this->file);
             $logs = [];
 
             foreach ($lines as $key => $line) {
